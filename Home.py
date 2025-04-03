@@ -114,6 +114,34 @@ if action:
         st.badge("Wrong!", color="red")
         st.session_state["answers"]["result5"] = "False"
 
+
+#Question6
+question = st.write("<b>Question 6.</b>", unsafe_allow_html=True)
+
+radio = st.radio("""
+
+Select the content of
+from collections import Counter
+theData = [5,5,6,8,4,5,1,2,3,6,5,9,6,3,2,5]
+ counterObject = Counter(theData)
+ print(counterObject) """, ["theData([5,5,6,8,4,5,1,2,3,6,5,9,6,3,2,5])",
+                            "theData = ({5: 5, 6: 3, 2: 2, 3: 2, 8: 1, 4: 1, 1: 1, 9:1})",
+                 "Counter({5: 5, 6: 3, 2: 2, 3: 2, 8: 1, 4: 1, 1: 1, 9: 1})",
+                 "Counter = [1,2,2,3,3,4,5,5,5,5,5,6,6,6,8,9]"], key="option6")
+
+action = st.button("Check Answer6")
+
+if action:
+    if st.session_state["option6"] == "Counter({5: 5, 6: 3, 2: 2, 3: 2, 8: 1, 4: 1, 1: 1, 9: 1})":
+        st.badge("Correct!", color="green")
+        st.session_state["answers"]["resul6"] = "True"
+        st.session_state["correct_answers"].append("True")
+
+    else:
+        st.badge("Wrong!", color="red")
+        st.session_state["answers"]["result6"] = "False"
+
+
 submit = st.button("Submit")
 
 if submit:
