@@ -3,7 +3,7 @@ import streamlit as st
 import time
 
 
-st.image("/Users/user/Documents/PYTHON/CBT/header-image.png")
+# st.image("/Users/user/Documents/PYTHON/CBT/header-image.png")
 st.title("Introduction to Programming with Python")
 st.header("Examination Paper")
 st.subheader(f"\n{time.strftime("%d/%b/%Y")}")
