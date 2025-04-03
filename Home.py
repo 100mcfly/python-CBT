@@ -120,16 +120,16 @@ if action:
 submit = st.button("Submit")
 
 if submit:
-    total_questions = len(st.session_state["answers"].values())
-    st.write(f"total questions = {total_questions}")
+    try:
+        st.text(f"Congratulations {name.title()}, you have completed the exam!")
 
-    correct_answers = len(st.session_state["correct_answers"])
-    st.write(f"correct answers = {correct_answers}")
+        total_questions = len(st.session_state["answers"].values())
+        st.write(f"total questions = {total_questions}")
 
-    percentage = float((correct_answers/total_questions)*100)
-    st.write(f"<b>Your total score is: {correct_answers}/{total_questions} which is {percentage}%</b>", unsafe_allow_html=True)
+        correct_answers = len(st.session_state["correct_answers"])
+        st.write(f"correct answers = {correct_answers}")
 
-st.write(st.session_state)
-
-st.text(f"Congratulations {name.title()}, you have completed the exam. Goodluck!")
-
+        percentage = float((correct_answers/total_questions)*100)
+        st.write(f"<b>Your total score is: {correct_answers}/{total_questions} which is {percentage}%</b>", unsafe_allow_html=True)
+    except ZeroDivisionError:
+        st.write("Please answer a question first")
